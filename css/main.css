@@ -1,0 +1,79 @@
+html{
+    box-sizing: border-box;
+}
+
+*::before, *::after{
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    background: #777;
+}
+
+.parent-container{
+    border: 2px solid #777;
+    width: 40%;
+    margin: 12em auto;
+    text-align: center;
+    padding: 3em 0;
+    border-radius: 15px;
+    background: #fff;
+}
+
+.humidity-windspeedContainer{
+    display: flex;
+    gap: 7em;
+    border: 2px solid #777;
+    width: 50%;
+    margin: 0 auto;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.humidity-icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wind-icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.current-temperature{
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.city-name{
+    font-size: 1.4em;
+}
+
+.city-name-input{
+    text-align: center;
+    border: 2px solid #777;
+    font-size: 1.2em;
+    border-radius: 10px;
+    padding: .20em .50em;
+    margin-right: .40em;
+}
+
+.search-city-button{
+    background: #D9D8D8;
+    border: 2px solid #D9D8D8;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding:  .40em .50em .40em .50em;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.weather-icon{
+    max-width: 20%;
+}

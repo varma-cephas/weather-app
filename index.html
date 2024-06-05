@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Weather App</title>
+        <link rel="stylesheet" href="css/main.css">
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+        <!-- google fonts -->
+    </head>
+    <body>
+        <section class="outer-weather-app-container">
+            <div class="parent-container">
+                <form class="search-weather-container">
+                    <input class="city-name-input" type="text" placeholder="Please enter a city name">
+                    <input type="submit" class="search-city-button" value="Search">
+                </form>
+                <img class="weather-icon">
+                <p class="current-temperature">current temperature</p>
+                <p class="city-name">the city</p>
+                <div class="humidity-wind-icon-outer-container">
+                    <div class="humidity-windspeedContainer">
+                        <div class="humidity-icon-container">
+                            <img src="./assets/humidity.svg" alt="humidity-icon">
+                            <div class="humidity-container">
+                                <p class="humidity-percentage">0%</p>
+                                <p>Humidity</p>
+                            </div>
+                        </div>
+                        <div class="wind-icon-container">
+                            <img src="./assets/wind.svg" alt="wind-icon">
+                            <div class="wind-container">
+                                <p class="wind-percentage">0%</p>
+                                <p>Wind Speed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="js/script.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>
