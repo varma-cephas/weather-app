@@ -16,9 +16,56 @@ async function fetchWeatherData(cityName){
     windSpeed = weatherData.wind.speed;
     humidity = weatherData.main.humidity;
     temperature = weatherData.main.temp;
-    console.log(weatherData)
+    // console.log(weatherData.main.temp)
 }
 
+search_weather_container.addEventListener("submit", (event)=>{
+    if(city_name_input.value !== ""){
+        city_name.textContent = city_name_input.value;
+        fetchWeatherData(city_name_input.value);
+        setTimeout(()=>{
+            if(currentWeather === "rain"){
+                weather_icon.setAttribute("alt", "rain");
+                weather_icon.setAttribute("src","assets/rain.svg");
+            }else if(currentWeather === "clouds"){
+                weather_icon.setAttribute("alt", "rain");
+                weather_icon.setAttribute("src","assets/cloud.svg");
+            }else if(currentWeather === "clear"){
+                weather_icon.setAttribute("alt", "rain");
+                weather_icon.setAttribute("src","assets/humidity.svg");
+            }else{
+                console.log(currentWeather)
+            }
 
+            if(typeof windSpeed === "number"){
+                wind_percentage.textContent = `${windSpeed}%`;
+                humidity_percentage.textContent = `${humidity}%`;
+                current_temperature.textContent = `${temperature}°c`;
+            }
+            
+        },1400)
+    }else{
+        console.log("please enter a city name")
+    }
+    event.preventDefault()
+})
+
+
+city_name.textContent = "City Name"
 fetchWeatherData("Monrovia")
 
+setTimeout(()=>{
+    if(currentWeather === "clouds"){
+        weather_icon.setAttribute("alt", "clouds");
+        weather_icon.setAttribute("src","assets/cloud.svg");
+    }else if(currentWeather === "rain"){
+        weather_icon.setAttribute("src","assets/rain.svg");
+    }
+
+    if(typeof windSpeed === "number"){
+        wind_percentage.textContent = `${windSpeed}%`
+        humidity_percentage.textContent = `${humidity}%`;
+        current_temperature.textContent = `${temperature}°c`;
+    }
+
+},1400)
