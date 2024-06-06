@@ -8,9 +8,9 @@ const current_temperature = document.querySelector(".current-temperature");
 let currentWeather, windSpeed, humidity, temperature;
 
 async function fetchWeatherData(cityName){
-    const responseGeolacation = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=586d47e17b7dd94ea91ef9f9e6785a3e`);
+    const responseGeolacation = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=586d47e17b7dd94ea91ef9f9e6785a3e`, {referrerPolicy: "unsafe-url"});
     const geolocationData = await responseGeolacation.json();
-    const responseWeatherData = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${geolocationData[0].lat}&lon=${geolocationData[0].lon}&appid=586d47e17b7dd94ea91ef9f9e6785a3e`);
+    const responseWeatherData = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${geolocationData[0].lat}&lon=${geolocationData[0].lon}&appid=586d47e17b7dd94ea91ef9f9e6785a3e`, {referrerPolicy: "unsafe-url"});
     const weatherData = await responseWeatherData.json();
     currentWeather = weatherData.weather[0].main.toLowerCase();
     windSpeed = weatherData.wind.speed;
